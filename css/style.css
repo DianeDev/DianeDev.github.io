@@ -1,0 +1,343 @@
+/* import fonts from fonts.css file */
+@import url(./fonts.css);
+
+
+/* css variables */
+@import url(./partials/_variables.css);
+
+/* import global styling */
+@import url(./partials/_global.css);
+
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 0.6;
+}
+
+/* start navigation */
+
+.header_area .main-menu .navbar .navbar-brand {
+    padding: 0 2rem 0 5rem;
+}
+
+.header_area .main-menu .navbar {
+    padding: 1rem 20rem;
+}
+
+.header_area .main-menu .nav-item .nav-link {
+    font: normal 500 15px/2px var(--roboto);
+    padding: 1.7rem;
+    color: var(--title-color);
+    font-size: 20px;
+}
+
+.header_area .main-menu .navbar-nav .active a {
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header_area .main-menu .navbar-nav a:hover{
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#home{
+    margin-bottom: 5rem;
+    background-color: linear-gradient(#289739, #fff);
+}
+
+.site-buttons a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+/* end navigation */
+
+/* Banner Area */
+
+.site-main .site-banner {
+    background: url(../img/banner/home-banner.png) no-repeat 0% 30%;
+}
+
+.site-main .site-banner h3 {
+    /* padding-top: 35%; */
+    font-weight: 500;
+}
+
+.site-main .site-banner h4 {
+    font-size: 1.5rem;
+}
+
+.site-main .site-banner .banner-image>img {
+    padding: 7rem 0;
+    width: 30rem;
+    /* background-image: url(../img/banner/portrait-removebg-preview\ copie.png); */
+    margin-left: 20%;
+    background-position: center;
+    background-repeat: no-repeat 0% 100%;
+    background-size: cover;
+    /* border-radius: 50%; */
+}
+
+.banner-image img{
+    position: relative;
+    height: 90%;
+    transform: rotateY(180deg);
+    animation: animateUser 4s linear infinite;
+}
+
+@keyframes animateUser{
+    50%{
+        right: 30px;
+        top: -30px;
+    }
+}
+
+.social a {
+    background-color: #fff;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+    border-radius: 50px;
+}
+
+.social a:hover {
+    background-color: #289739;
+    color: #fff;
+}
+
+.typed-cursor {
+    font-size: 30px;
+    color: black;
+}
+
+.typed-text {
+    font-size: 30px;
+}
+
+/* =============================================================End Banner Area================================================= */
+
+
+
+/* Start About Area */
+
+.site-main .about-area {
+    padding: 8rem 5rem;
+}
+
+.site-main .about-area .about-title h2>span {
+    display: block;
+    font: normal bold 49px/ 60px var(--roboto);
+    letter-spacing: 21px;
+}
+
+.site-main .about-area .about-title .paragraph>p {
+    padding: .4rem 0;
+}
+
+/* End About Area */
+
+
+
+/* skill */
+
+
+.skillbar {
+    position: relative;
+    margin-bottom: 35px;
+    width: 100%;
+    background: #eee;
+    height: 35px;
+    border-radius: 3px;
+}
+
+.skillbar-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #fff;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    margin: 0;
+}
+
+.skillbar-title span {
+    display: block;
+    /* background: rgba(0, 0, 0, 0.1); */
+    padding: 0 20px;
+    /* height: 35px; */
+    line-height: 35px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.skillbar-bar {
+    height: 35px;
+    width: 0%;
+    border-radius: 3px;
+    transition: 500ms linear;
+    transition-property: width, background-color;
+    background: #289739;
+}
+
+.skill-bar-percent {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 15px;
+    height: 35px;
+    line-height: 35px;
+    color: rgba(0, 0, 0, 0.4);
+    transition: color 500ms ease-out;
+}
+
+.complete .skill-bar-percent {
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.complete.server .skill-bar-percent {
+    color: #333;
+}
+
+#skill .skill-title{
+    margin-bottom: 4%;
+}
+
+
+/***==================================== Project Portfolio================================ ***/
+
+.site-main .portfolio-container{
+    overflow-y: scroll;
+    height: 25rem;
+    transition: all 3ms ease;
+    scroll-behavior:smooth;
+}
+.site-main #portfolio-flters button {
+    display: inline-block;
+    font-weight: 500;
+    color:var(--primary-color);
+    cursor: pointer;
+    background-color: transparent;
+    transition: .5s;
+    border: 2px solid transparent;
+}
+
+.site-main #portfolio-flters button:hover,
+#portfolio-flters li.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.site-main .portfolio-img {
+    position: relative;
+}
+
+.site-main .portfolio-btn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background:#2897398b;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 30px;
+    padding-bottom: 100px !important;
+    opacity: 0;
+    transition: .5s;
+}
+
+.site-main .element-item:hover .portfolio-btn {
+    opacity: 1;
+    padding-bottom: 30px !important;
+}
+
+/* Subscribe me */
+
+.site-main .subscribe-us-area .subscribe {
+    background: url(../img/subscribe-bg\ copie.png) no-repeat;
+    padding: 10rem 0;
+    margin: 5rem 6rem;
+}
+
+.site-main .subscribe-us-area .subscribe .subscribe-title h4 {
+    font: normal 700 30px/ 30px var(--roboto);
+    color: whitesmoke;
+}
+
+.site-main .subscribe-us-area .subscribe .subscribe-title p {
+    color: whitesmoke;
+    padding: 1rem 4rem;
+}
+
+.site-main .subscribe-us-area .subscribe form .input-textbox input {
+    width: 400px;
+    padding: 1.5rem 1rem;
+    border: 1px solid whitesmoke;
+    background: transparent;
+    color: white;
+    font: normal 500 17px/20px var(--roboto);
+}
+
+.site-main .subscribe-us-area .subscribe form .input-textbox input::placeholder {
+    color: whitesmoke;
+}
+
+.site-main .subscribe-us-area .subscribe form .btn-submit button {
+    background: whitesmoke;
+    color: #000;
+    padding: .7rem 2rem;
+}
+
+/* End subscribe me */
+
+/* Footer Area */
+
+footer.footer-area {
+    padding: 5rem 0;
+    background: url(../img/footer-bg.png) no-repeat;
+}
+
+footer.footer-area .social h5 {
+    font: normal 500 23px/ 30px var(--roboto);
+}
+
+footer .social a {
+    margin-top: 30px;
+}
+
+footer.footer-area .social a>i {
+    font-size: 22px;
+    padding: 2rem;
+}
+
+footer.footer-area .social a:hover>i {
+
+    color: #fff;
+}
+
+
+/* End Footer */
